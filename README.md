@@ -105,8 +105,13 @@ cd elektronicare-flutter
 
 ### 2. Install Dependencies
 ```bash
+# If you encounter dependency conflicts, use the working configuration:
+cp pubspec_working.yaml pubspec.yaml
+flutter clean
 flutter pub get
 ```
+
+**⚠️ Important**: If you encounter dependency conflicts, check `DEPENDENCY_GUIDE.md` for solutions.
 
 ### 3. Firebase Setup
 
