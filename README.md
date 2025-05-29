@@ -1,6 +1,16 @@
-# ElektroniCare Flutter
+# ElektroniCare Flutter 🔧📱
 
-A comprehensive Flutter application for electronic device repair services, providing users with an intuitive platform to book repairs, track progress, and manage their device maintenance needs.
+A comprehensive electronic repair service application built with Flutter, featuring a **dual user system** for customers and technicians with modern UI/UX and complete backend integration.
+
+## ✨ Key Highlights
+
+🎯 **Dual User System**: Separate interfaces for Customers and Technicians  
+🔐 **Google Sign-In**: Seamless authentication with Firebase  
+☁️ **Cloudinary Integration**: Optimized image storage and management  
+📧 **Email Notifications**: HTML email templates for updates  
+📊 **Analytics Dashboard**: Comprehensive stats and earnings tracking  
+🎨 **Material Design 3**: Modern and immersive interface  
+🔔 **Push Notifications**: Real-time updates and alerts
 
 ## 🚀 Features
 
