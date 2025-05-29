@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../core/utils/app_router.dart';
-import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
-import '../../../../core/services/firebase_service.dart';
 import '../../../../core/models/repair_model.dart';
+import '../../../../core/services/firebase_service.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../../core/utils/app_router.dart';
 
 // Providers
 final repairHistoryProvider = FutureProvider<List<RepairModel>>((ref) async {
   final userId = FirebaseService.currentUserId;
   if (userId == null) return [];
-  return await FirebaseService.getUserRepairs(userId);
+  return FirebaseService.getUserRepairs(userId);
 });
 
 final selectedStatusProvider = StateProvider<RepairStatus?>((ref) => null);
@@ -31,7 +31,7 @@ final filteredRepairsProvider = Provider<AsyncValue<List<RepairModel>>>((ref) {
       return AsyncValue.data(filtered);
     },
     loading: () => const AsyncValue.loading(),
-    error: (error, stack) => AsyncValue.error(error, stack),
+    error: AsyncValue.error,
   );
 });
 

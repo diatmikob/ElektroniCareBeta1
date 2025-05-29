@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../models/technician_model.dart';
+
 import '../models/service_model.dart';
+import '../models/technician_model.dart';
 
 class SeederService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -72,7 +73,6 @@ class SeederService {
         totalReviews: 127,
         experience: '5 tahun',
         location: 'Jakarta Selatan',
-        isAvailable: true,
         isVerified: true,
         description: 'Teknisi berpengalaman dalam perbaikan smartphone dan tablet. Spesialis dalam perbaikan iPhone, Samsung, dan berbagai merek Android. Menggunakan spare part original dan memberikan garansi untuk setiap perbaikan.',
         certifications: [
@@ -112,7 +112,6 @@ class SeederService {
         totalReviews: 89,
         experience: '7 tahun',
         location: 'Jakarta Pusat',
-        isAvailable: true,
         isVerified: true,
         description: 'Ahli dalam perbaikan laptop dan komputer desktop. Berpengalaman menangani berbagai merek seperti ASUS, Acer, Lenovo, HP, dan Dell. Menyediakan layanan upgrade hardware dan recovery data.',
         certifications: [
@@ -151,7 +150,6 @@ class SeederService {
         totalReviews: 64,
         experience: '4 tahun',
         location: 'Jakarta Barat',
-        isAvailable: true,
         isVerified: true,
         description: 'Spesialis perbaikan gaming console. Menangani semua jenis kerusakan pada PlayStation, Xbox, dan Nintendo Switch. Berpengalaman dalam perbaikan hardware dan software gaming console.',
         certifications: [
@@ -189,7 +187,6 @@ class SeederService {
         totalReviews: 156,
         experience: '8 tahun',
         location: 'Jakarta Timur',
-        isAvailable: true,
         isVerified: true,
         description: 'Teknisi berpengalaman dalam perbaikan peralatan rumah tangga. Menangani AC, mesin cuci, kulkas, microwave, dan TV. Menyediakan layanan maintenance berkala untuk menjaga performa optimal peralatan.',
         certifications: [
@@ -265,7 +262,6 @@ class SeederService {
         price: 150000,
         duration: '1-2 jam',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/smartphone_screen.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -278,7 +274,6 @@ class SeederService {
         price: 100000,
         duration: '30 menit',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/smartphone_battery.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -292,7 +287,6 @@ class SeederService {
         price: 200000,
         duration: '1 jam',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/laptop_ram.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -305,7 +299,6 @@ class SeederService {
         price: 75000,
         duration: '2 jam',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/laptop_cleaning.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -319,7 +312,6 @@ class SeederService {
         price: 250000,
         duration: '2-4 jam',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/playstation_repair.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -333,7 +325,6 @@ class SeederService {
         price: 150000,
         duration: '2-3 jam',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/ac_service.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -346,7 +337,6 @@ class SeederService {
         price: 200000,
         duration: '2-4 jam',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/washing_machine.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -360,7 +350,6 @@ class SeederService {
         price: 100000,
         duration: '1-2 jam',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/speaker_repair.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -373,7 +362,6 @@ class SeederService {
         price: 300000,
         duration: '3-5 jam',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/camera_repair.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),
@@ -387,7 +375,6 @@ class SeederService {
         price: 50000,
         duration: '30 menit',
         imageUrl: 'https://res.cloudinary.com/demo/image/upload/consultation.jpg',
-        isActive: true,
         createdAt: now,
         updatedAt: now,
       ),

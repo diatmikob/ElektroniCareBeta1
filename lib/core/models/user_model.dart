@@ -3,19 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 enum UserType { customer, technician }
 
 class UserModel {
-  final String id;
-  final String fullName;
-  final String email;
-  final String? phone;
-  final String? address;
-  final String? profileImageUrl;
-  final UserType userType;
-  final bool isEmailVerified;
-  final bool isPhoneVerified;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-  final bool isActive;
-  final Map<String, dynamic>? preferences;
 
   const UserModel({
     required this.id,
@@ -85,6 +72,19 @@ class UserModel {
       preferences: map['preferences'],
     );
   }
+  final String id;
+  final String fullName;
+  final String email;
+  final String? phone;
+  final String? address;
+  final String? profileImageUrl;
+  final UserType userType;
+  final bool isEmailVerified;
+  final bool isPhoneVerified;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+  final bool isActive;
+  final Map<String, dynamic>? preferences;
 
   // Convert UserModel to Map for Firestore
   Map<String, dynamic> toMap() {

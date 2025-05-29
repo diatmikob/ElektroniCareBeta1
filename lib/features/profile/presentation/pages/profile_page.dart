@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../core/utils/app_router.dart';
-import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
-import '../../../../core/services/firebase_service.dart';
 import '../../../../core/models/user_model.dart';
+import '../../../../core/services/firebase_service.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../../core/utils/app_router.dart';
 
 // Provider for user data
 final profileUserProvider = FutureProvider<UserModel?>((ref) async {
-  return await FirebaseService.getCurrentUserData();
+  return FirebaseService.getCurrentUserData();
 });
 
 class ProfilePage extends ConsumerWidget {
@@ -533,11 +533,6 @@ class ProfilePage extends ConsumerWidget {
 }
 
 class ProfileMenuItem {
-  final IconData icon;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-  final bool isDestructive;
 
   ProfileMenuItem({
     required this.icon,
@@ -546,4 +541,9 @@ class ProfileMenuItem {
     required this.onTap,
     this.isDestructive = false,
   });
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+  final bool isDestructive;
 }

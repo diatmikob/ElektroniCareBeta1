@@ -3,14 +3,14 @@ import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CloudinaryService {
-  static const String _cloudName = 'YOUR_CLOUD_NAME'; // Replace with your Cloudinary cloud name
-  static const String _uploadPreset = 'YOUR_UPLOAD_PRESET'; // Replace with your upload preset
-  
-  late final CloudinaryPublic _cloudinary;
   
   CloudinaryService() {
     _cloudinary = CloudinaryPublic(_cloudName, _uploadPreset, cache: false);
   }
+  static const String _cloudName = 'YOUR_CLOUD_NAME'; // Replace with your Cloudinary cloud name
+  static const String _uploadPreset = 'YOUR_UPLOAD_PRESET'; // Replace with your upload preset
+  
+  late final CloudinaryPublic _cloudinary;
 
   /// Upload image to Cloudinary
   Future<String?> uploadImage({
@@ -62,7 +62,7 @@ class CloudinaryService {
     required File imageFile,
     required String userId,
   }) async {
-    return await uploadImage(
+    return uploadImage(
       imageFile: imageFile,
       folder: 'elektronicare/profiles',
       publicId: 'profile_$userId',
@@ -114,10 +114,15 @@ class CloudinaryService {
   }
 
   /// Delete image from Cloudinary
+  /// Note: CloudinaryPublic doesn't support delete operations
+  /// For delete functionality, you would need Cloudinary Admin API
   Future<bool> deleteImage(String publicId) async {
     try {
-      await _cloudinary.destroy(publicId);
-      return true;
+      // CloudinaryPublic doesn't have destroy method
+      // This would require Cloudinary Admin API with API secret
+      print('Delete operation not supported with CloudinaryPublic');
+      print('Public ID to delete: $publicId');
+      return false;
     } catch (e) {
       print('Error deleting image from Cloudinary: $e');
       return false;

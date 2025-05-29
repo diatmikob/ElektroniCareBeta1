@@ -310,7 +310,6 @@ class _UserTypeSelectionPageState extends State<UserTypeSelectionPage>
     return CustomButton(
       text: 'Lanjutkan',
       onPressed: _selectedUserType != null ? _handleContinue : null,
-      isLoading: false,
       width: double.infinity,
     );
   }

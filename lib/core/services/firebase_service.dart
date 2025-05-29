@@ -1,17 +1,17 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:typed_data';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-import '../models/user_model.dart';
-import '../models/service_model.dart';
-import '../models/repair_model.dart';
 import '../constants/app_constants.dart';
+import '../models/repair_model.dart';
+import '../models/service_model.dart';
+import '../models/user_model.dart';
 
 class FirebaseService {
   static final FirebaseAuth _auth = FirebaseAuth.instance;
   static final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  static final FirebaseStorage _storage = FirebaseStorage.instance;
   static final FirebaseMessaging _messaging = FirebaseMessaging.instance;
 
   // Initialize Firebase services
@@ -144,7 +144,7 @@ class FirebaseService {
 
       final snapshot = await query.get();
       return snapshot.docs
-          .map((doc) => ServiceModel.fromDocument(doc))
+          .map(ServiceModel.fromDocument)
           .toList();
     } catch (e) {
       print('Error getting services: $e');
@@ -193,7 +193,7 @@ class FirebaseService {
           .get();
 
       return snapshot.docs
-          .map((doc) => RepairModel.fromDocument(doc))
+          .map(RepairModel.fromDocument)
           .toList();
     } catch (e) {
       print('Error getting user repairs: $e');
@@ -251,28 +251,9 @@ class FirebaseService {
     }
   }
 
-  // Storage Methods
-  static Future<String> uploadImage(String path, List<int> imageBytes) async {
-    try {
-      final ref = _storage.ref().child(path);
-      final uploadTask = ref.putData(Uint8List.fromList(imageBytes));
-      final snapshot = await uploadTask;
-      return await snapshot.ref.getDownloadURL();
-    } catch (e) {
-      print('Error uploading image: $e');
-      throw Exception('Failed to upload image');
-    }
-  }
-
-  // Delete image
-  static Future<void> deleteImage(String imageUrl) async {
-    try {
-      final ref = _storage.refFromURL(imageUrl);
-      await ref.delete();
-    } catch (e) {
-      print('Error deleting image: $e');
-    }
-  }
+  // Storage Methods - Using Cloudinary instead of Firebase Storage
+  // Image upload/delete functionality is handled by CloudinaryService
+  // No Firebase Storage needed since we use Cloudinary for all image operations
 
   // Messaging Methods
   static Future<String?> getFCMToken() async {

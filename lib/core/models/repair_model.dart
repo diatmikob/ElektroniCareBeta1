@@ -57,23 +57,6 @@ enum RepairStatus {
 }
 
 class RepairModel {
-  final String id;
-  final String userId;
-  final String deviceType;
-  final String deviceModel;
-  final String issueDescription;
-  final String? serviceId;
-  final String? technicianEmail;
-  final RepairStatus status;
-  final double? estimatedCost;
-  final DateTime? appointmentTimestamp;
-  final DateTime? completedDate;
-  final String? location;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-  final List<String>? images;
-  final Map<String, dynamic>? metadata;
-  final String? notes;
 
   const RepairModel({
     required this.id,
@@ -157,6 +140,23 @@ class RepairModel {
       notes: map['notes'],
     );
   }
+  final String id;
+  final String userId;
+  final String deviceType;
+  final String deviceModel;
+  final String issueDescription;
+  final String? serviceId;
+  final String? technicianEmail;
+  final RepairStatus status;
+  final double? estimatedCost;
+  final DateTime? appointmentTimestamp;
+  final DateTime? completedDate;
+  final String? location;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+  final List<String>? images;
+  final Map<String, dynamic>? metadata;
+  final String? notes;
 
   // Convert RepairModel to Map for Firestore
   Map<String, dynamic> toMap() {

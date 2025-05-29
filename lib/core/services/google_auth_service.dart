@@ -1,6 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../models/user_model.dart';
 
 class GoogleAuthService {
@@ -33,7 +34,7 @@ class GoogleAuthService {
       
       // Create or update user in Firestore
       if (userCredential.user != null) {
-        await _createOrUpdateUserInFirestore(userCredential.user!);
+        await _createOrUpdateUserInFirestore(userCredential.user);
       }
 
       return userCredential;
@@ -70,7 +71,6 @@ class GoogleAuthService {
           fullName: firebaseUser.displayName ?? '',
           email: firebaseUser.email ?? '',
           profileImageUrl: firebaseUser.photoURL,
-          userType: UserType.customer, // Default to customer
           isEmailVerified: firebaseUser.emailVerified,
           createdAt: now,
           updatedAt: now,
@@ -119,7 +119,7 @@ class GoogleAuthService {
       
       // Update user in Firestore
       if (userCredential.user != null) {
-        await _updateUserAfterLinking(userCredential.user!);
+        await _updateUserAfterLinking(userCredential.user);
       }
 
       return userCredential;

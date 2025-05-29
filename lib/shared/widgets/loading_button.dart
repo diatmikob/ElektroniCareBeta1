@@ -4,6 +4,15 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../../core/theme/app_theme.dart';
 
 class LoadingButton extends StatelessWidget {
+
+  const LoadingButton({
+    required this.onPressed, required this.child, super.key,
+    this.isLoading = false,
+    this.style,
+    this.isOutlined = false,
+    this.loadingColor,
+    this.loadingSize = 20,
+  });
   final VoidCallback? onPressed;
   final Widget child;
   final bool isLoading;
@@ -11,17 +20,6 @@ class LoadingButton extends StatelessWidget {
   final bool isOutlined;
   final Color? loadingColor;
   final double? loadingSize;
-
-  const LoadingButton({
-    super.key,
-    required this.onPressed,
-    required this.child,
-    this.isLoading = false,
-    this.style,
-    this.isOutlined = false,
-    this.loadingColor,
-    this.loadingSize = 20,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +58,16 @@ class LoadingButton extends StatelessWidget {
 }
 
 class LoadingIconButton extends StatelessWidget {
+
+  const LoadingIconButton({
+    required this.onPressed, required this.icon, super.key,
+    this.isLoading = false,
+    this.color,
+    this.size,
+    this.loadingColor,
+    this.loadingSize = 16,
+    this.tooltip,
+  });
   final VoidCallback? onPressed;
   final IconData icon;
   final bool isLoading;
@@ -68,18 +76,6 @@ class LoadingIconButton extends StatelessWidget {
   final Color? loadingColor;
   final double? loadingSize;
   final String? tooltip;
-
-  const LoadingIconButton({
-    super.key,
-    required this.onPressed,
-    required this.icon,
-    this.isLoading = false,
-    this.color,
-    this.size,
-    this.loadingColor,
-    this.loadingSize = 16,
-    this.tooltip,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +97,17 @@ class LoadingIconButton extends StatelessWidget {
 }
 
 class LoadingFloatingActionButton extends StatelessWidget {
+
+  const LoadingFloatingActionButton({
+    required this.onPressed, required this.child, super.key,
+    this.isLoading = false,
+    this.backgroundColor,
+    this.foregroundColor,
+    this.loadingColor,
+    this.loadingSize = 20,
+    this.tooltip,
+    this.mini = false,
+  });
   final VoidCallback? onPressed;
   final Widget child;
   final bool isLoading;
@@ -110,19 +117,6 @@ class LoadingFloatingActionButton extends StatelessWidget {
   final double? loadingSize;
   final String? tooltip;
   final bool mini;
-
-  const LoadingFloatingActionButton({
-    super.key,
-    required this.onPressed,
-    required this.child,
-    this.isLoading = false,
-    this.backgroundColor,
-    this.foregroundColor,
-    this.loadingColor,
-    this.loadingSize = 20,
-    this.tooltip,
-    this.mini = false,
-  });
 
   @override
   Widget build(BuildContext context) {

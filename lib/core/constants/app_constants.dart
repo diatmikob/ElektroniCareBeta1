@@ -28,11 +28,11 @@ class AppConstants {
   static const Duration longAnimation = Duration(milliseconds: 600);
   
   // UI Constants
-  static const double defaultPadding = 16.0;
-  static const double smallPadding = 8.0;
-  static const double largePadding = 24.0;
-  static const double borderRadius = 12.0;
-  static const double cardElevation = 4.0;
+  static const double defaultPadding = 16;
+  static const double smallPadding = 8;
+  static const double largePadding = 24;
+  static const double borderRadius = 12;
+  static const double cardElevation = 4;
   
   // Service Categories
   static const List<String> serviceCategories = [

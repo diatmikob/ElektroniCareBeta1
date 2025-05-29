@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../core/utils/app_router.dart';
-import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../../core/utils/app_router.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -51,7 +51,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               child: Padding(
                 padding: const EdgeInsets.all(AppConstants.defaultPadding),
                 child: TextButton(
-                  onPressed: () => _navigateToLogin(),
+                  onPressed: _navigateToLogin,
                   child: Text(
                     'Skip',
                     style: TextStyle(
@@ -91,7 +91,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
                       _onboardingData.length,
-                      (index) => _buildPageIndicator(index),
+                      _buildPageIndicator,
                     ),
                   ),
                   
@@ -240,10 +240,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
 }
 
 class OnboardingData {
-  final String title;
-  final String description;
-  final String image;
-  final Color color;
 
   OnboardingData({
     required this.title,
@@ -251,4 +247,8 @@ class OnboardingData {
     required this.image,
     required this.color,
   });
+  final String title;
+  final String description;
+  final String image;
+  final Color color;
 }

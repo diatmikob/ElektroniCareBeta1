@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
+import '../../../../core/theme/app_theme.dart';
 
 // Mock notification model
 class NotificationModel {
-  final String id;
-  final String title;
-  final String message;
-  final DateTime timestamp;
-  final bool isRead;
-  final NotificationType type;
 
   NotificationModel({
     required this.id,
     required this.title,
     required this.message,
     required this.timestamp,
-    this.isRead = false,
-    required this.type,
+    required this.type, this.isRead = false,
   });
+  final String id;
+  final String title;
+  final String message;
+  final DateTime timestamp;
+  final bool isRead;
+  final NotificationType type;
 }
 
 enum NotificationType {
@@ -305,7 +304,7 @@ class NotificationsPage extends ConsumerWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'You\'re all caught up! New notifications will appear here.',
+            "You're all caught up! New notifications will appear here.",
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               color: AppTheme.textLightColor,
             ),

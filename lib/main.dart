@@ -1,15 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-import 'core/theme/app_theme.dart';
+import 'core/constants/app_constants.dart';
 import 'core/services/firebase_service.dart';
 import 'core/services/seeder_service.dart';
+import 'core/theme/app_theme.dart';
 import 'core/utils/app_router.dart';
-import 'core/constants/app_constants.dart';
 import 'firebase_options.dart';
 
 void main() async {

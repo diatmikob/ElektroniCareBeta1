@@ -1,12 +1,13 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:fl_chart/fl_chart.dart';
+
 import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/custom_app_bar.dart';
 import '../../../core/widgets/custom_card.dart';
-import '../widgets/technician_stats_card.dart';
-import '../widgets/recent_requests_list.dart';
 import '../widgets/earnings_chart.dart';
+import '../widgets/recent_requests_list.dart';
+import '../widgets/technician_stats_card.dart';
 
 class TechnicianDashboardPage extends ConsumerStatefulWidget {
   const TechnicianDashboardPage({super.key});
@@ -209,7 +210,7 @@ class _TechnicianDashboardPageState extends ConsumerState<TechnicianDashboardPag
             const SizedBox(height: 20),
             SizedBox(
               height: 200,
-              child: EarningsChart(),
+              child: const EarningsChart(),
             ),
           ],
         ),

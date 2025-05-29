@@ -1,31 +1,32 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:typed_data';
 
-import '../../../../core/utils/app_router.dart';
-import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
-import '../../../../core/services/firebase_service.dart';
-import '../../../../core/models/service_model.dart';
 import '../../../../core/models/repair_model.dart';
+import '../../../../core/models/service_model.dart';
+import '../../../../core/services/firebase_service.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../../core/utils/app_router.dart';
 import '../../../../shared/widgets/custom_text_field.dart';
 import '../../../../shared/widgets/loading_button.dart';
 
 // Provider for selected service
 final selectedServiceProvider = FutureProvider.family<ServiceModel?, String?>((ref, serviceId) async {
   if (serviceId == null) return null;
-  return await FirebaseService.getServiceById(serviceId);
+  return FirebaseService.getServiceById(serviceId);
 });
 
 class BookingPage extends ConsumerStatefulWidget {
-  final String? serviceId;
 
   const BookingPage({
     super.key,
     this.serviceId,
   });
+  final String? serviceId;
 
   @override
   ConsumerState<BookingPage> createState() => _BookingPageState();
@@ -41,7 +42,7 @@ class _BookingPageState extends ConsumerState<BookingPage> {
 
   DateTime? _selectedDate;
   TimeOfDay? _selectedTime;
-  List<Uint8List> _selectedImages = [];
+  final List<Uint8List> _selectedImages = [];
   bool _isLoading = false;
 
   @override
@@ -77,7 +78,7 @@ class _BookingPageState extends ConsumerState<BookingPage> {
                   }
                   return const SizedBox.shrink();
                 },
-                loading: () => _buildServiceCardSkeleton(),
+                loading: _buildServiceCardSkeleton,
                 error: (_, __) => const SizedBox.shrink(),
               ),
 

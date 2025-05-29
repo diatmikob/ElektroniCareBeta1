@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../core/utils/app_router.dart';
 import '../../core/theme/app_theme.dart';
+import '../../core/utils/app_router.dart';
 
 // Current index provider for bottom navigation
 final bottomNavIndexProvider = StateProvider<int>((ref) => 0);
 
 class MainNavigation extends ConsumerWidget {
-  final Widget child;
 
   const MainNavigation({
-    super.key,
-    required this.child,
+    required this.child, super.key,
   });
+  final Widget child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

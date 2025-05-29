@@ -3,20 +3,18 @@ import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/custom_card.dart';
 
 class RequestItemCard extends StatelessWidget {
+
+  const RequestItemCard({
+    required this.request, required this.onTap, super.key,
+    this.onAccept,
+    this.onReject,
+    this.onUpdateStatus,
+  });
   final Map<String, dynamic> request;
   final VoidCallback onTap;
   final VoidCallback? onAccept;
   final VoidCallback? onReject;
   final Function(String)? onUpdateStatus;
-
-  const RequestItemCard({
-    super.key,
-    required this.request,
-    required this.onTap,
-    this.onAccept,
-    this.onReject,
-    this.onUpdateStatus,
-  });
 
   @override
   Widget build(BuildContext context) {

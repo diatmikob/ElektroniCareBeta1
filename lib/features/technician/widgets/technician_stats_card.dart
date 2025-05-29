@@ -3,20 +3,16 @@ import '../../../core/theme/app_theme.dart';
 import '../../../core/widgets/custom_card.dart';
 
 class TechnicianStatsCard extends StatelessWidget {
+
+  const TechnicianStatsCard({
+    required this.title, required this.value, required this.icon, required this.color, super.key,
+    this.trend,
+  });
   final String title;
   final String value;
   final IconData icon;
   final Color color;
   final String? trend;
-
-  const TechnicianStatsCard({
-    super.key,
-    required this.title,
-    required this.value,
-    required this.icon,
-    required this.color,
-    this.trend,
-  });
 
   @override
   Widget build(BuildContext context) {

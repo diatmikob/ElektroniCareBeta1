@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
 
 class RequestFilterChips extends StatelessWidget {
-  final String selectedFilter;
-  final Function(String) onFilterChanged;
 
   const RequestFilterChips({
-    super.key,
-    required this.selectedFilter,
-    required this.onFilterChanged,
+    required this.selectedFilter, required this.onFilterChanged, super.key,
   });
+  final String selectedFilter;
+  final Function(String) onFilterChanged;
 
   @override
   Widget build(BuildContext context) {

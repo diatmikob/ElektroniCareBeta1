@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../features/auth/presentation/pages/login_page.dart';
-import '../../features/auth/presentation/pages/register_page.dart';
 import '../../features/auth/presentation/pages/forgot_password_page.dart';
+import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/onboarding_page.dart';
+import '../../features/auth/presentation/pages/register_page.dart';
 import '../../features/auth/presentation/pages/user_type_selection_page.dart';
+import '../../features/booking/presentation/pages/booking_page.dart';
 import '../../features/dashboard/presentation/pages/dashboard_page.dart';
-import '../../features/profile/presentation/pages/profile_page.dart';
-import '../../features/profile/presentation/pages/edit_profile_page.dart';
-import '../../features/services/presentation/pages/services_page.dart';
-import '../../features/services/presentation/pages/service_detail_page.dart';
 import '../../features/history/presentation/pages/history_page.dart';
 import '../../features/history/presentation/pages/repair_detail_page.dart';
-import '../../features/booking/presentation/pages/booking_page.dart';
 import '../../features/notifications/presentation/pages/notifications_page.dart';
+import '../../features/profile/presentation/pages/edit_profile_page.dart';
+import '../../features/profile/presentation/pages/profile_page.dart';
+import '../../features/services/presentation/pages/service_detail_page.dart';
+import '../../features/services/presentation/pages/services_page.dart';
 import '../../features/technician/pages/technician_dashboard_page.dart';
 import '../../features/technician/pages/technician_requests_page.dart';
-import '../services/firebase_service.dart';
 import '../../shared/widgets/main_navigation.dart';
+import '../services/firebase_service.dart';
 
 // Route names
 class AppRoutes {

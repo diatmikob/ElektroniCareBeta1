@@ -1,42 +1,18 @@
 class TechnicianModel {
-  final String id;
-  final String fullName;
-  final String email;
-  final String phone;
-  final String profileImage;
-  final String specialization;
-  final List<String> services;
-  final double rating;
-  final int totalReviews;
-  final String experience;
-  final String location;
-  final bool isAvailable;
-  final bool isVerified;
-  final String description;
-  final List<String> certifications;
-  final Map<String, dynamic> workingHours;
-  final DateTime createdAt;
-  final DateTime updatedAt;
 
   TechnicianModel({
     required this.id,
     required this.fullName,
     required this.email,
     required this.phone,
-    this.profileImage = '',
-    required this.specialization,
-    required this.services,
+    required this.specialization, required this.services, required this.experience, required this.location, required this.createdAt, required this.updatedAt, this.profileImage = '',
     this.rating = 0.0,
     this.totalReviews = 0,
-    required this.experience,
-    required this.location,
     this.isAvailable = true,
     this.isVerified = false,
     this.description = '',
     this.certifications = const [],
     this.workingHours = const {},
-    required this.createdAt,
-    required this.updatedAt,
   });
 
   factory TechnicianModel.fromMap(Map<String, dynamic> map) {
@@ -61,6 +37,24 @@ class TechnicianModel {
       updatedAt: DateTime.parse(map['updatedAt'] ?? DateTime.now().toIso8601String()),
     );
   }
+  final String id;
+  final String fullName;
+  final String email;
+  final String phone;
+  final String profileImage;
+  final String specialization;
+  final List<String> services;
+  final double rating;
+  final int totalReviews;
+  final String experience;
+  final String location;
+  final bool isAvailable;
+  final bool isVerified;
+  final String description;
+  final List<String> certifications;
+  final Map<String, dynamic> workingHours;
+  final DateTime createdAt;
+  final DateTime updatedAt;
 
   Map<String, dynamic> toMap() {
     return {

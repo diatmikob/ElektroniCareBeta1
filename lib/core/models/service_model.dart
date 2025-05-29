@@ -1,18 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ServiceModel {
-  final String id;
-  final String name;
-  final String description;
-  final String category;
-  final double basePrice;
-  final String? estimatedTime;
-  final String? imageUrl;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-  final bool isActive;
-  final List<String>? tags;
-  final Map<String, dynamic>? metadata;
 
   const ServiceModel({
     required this.id,
@@ -73,6 +61,18 @@ class ServiceModel {
       metadata: map['metadata'],
     );
   }
+  final String id;
+  final String name;
+  final String description;
+  final String category;
+  final double basePrice;
+  final String? estimatedTime;
+  final String? imageUrl;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+  final bool isActive;
+  final List<String>? tags;
+  final Map<String, dynamic>? metadata;
 
   // Convert ServiceModel to Map for Firestore
   Map<String, dynamic> toMap() {

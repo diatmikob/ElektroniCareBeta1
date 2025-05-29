@@ -5,6 +5,10 @@ import '../models/technician_model.dart';
 import '../models/user_model.dart';
 
 class EmailService {
+
+  EmailService() {
+    _smtpServer = gmail(_username, _password);
+  }
   // Email configuration - Replace with your SMTP settings
   static const String _smtpHost = 'smtp.gmail.com';
   static const int _smtpPort = 587;
@@ -14,10 +18,6 @@ class EmailService {
   static const String _fromName = 'ElektroniCare';
 
   late final SmtpServer _smtpServer;
-
-  EmailService() {
-    _smtpServer = gmail(_username, _password);
-  }
 
   /// Send repair request notification to technician
   Future<bool> sendRepairRequestToTechnician({
@@ -184,10 +184,9 @@ class EmailService {
                     <h3>Detail Perbaikan</h3>
                     <p><strong>ID Perbaikan:</strong> ${repair.id}</p>
                     <p><strong>Jenis Perangkat:</strong> ${repair.deviceType}</p>
-                    <p><strong>Merek:</strong> ${repair.deviceBrand}</p>
                     <p><strong>Model:</strong> ${repair.deviceModel}</p>
-                    <p><strong>Masalah:</strong> ${repair.problemDescription}</p>
-                    <p><strong>Tanggal Dibuat:</strong> ${repair.createdAt.toString().split('.')[0]}</p>
+                    <p><strong>Masalah:</strong> ${repair.issueDescription}</p>
+                    <p><strong>Tanggal Dibuat:</strong> ${repair.createdAt?.toString().split('.')[0] ?? 'Tidak tersedia'}</p>
                 </div>
                 
                 <p>Silakan buka aplikasi ElektroniCare untuk melihat detail lengkap dan merespons permintaan ini.</p>

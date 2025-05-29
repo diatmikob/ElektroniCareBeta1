@@ -4,28 +4,6 @@ import 'package:flutter/services.dart';
 import '../../core/theme/app_theme.dart';
 
 class CustomTextField extends StatelessWidget {
-  final TextEditingController? controller;
-  final String? label;
-  final String? hintText;
-  final String? helperText;
-  final String? errorText;
-  final IconData? prefixIcon;
-  final Widget? suffixIcon;
-  final bool obscureText;
-  final bool enabled;
-  final bool readOnly;
-  final int? maxLines;
-  final int? maxLength;
-  final TextInputType? keyboardType;
-  final TextInputAction? textInputAction;
-  final List<TextInputFormatter>? inputFormatters;
-  final String? Function(String?)? validator;
-  final void Function(String)? onChanged;
-  final void Function()? onTap;
-  final void Function(String)? onSubmitted;
-  final FocusNode? focusNode;
-  final TextCapitalization textCapitalization;
-  final EdgeInsetsGeometry? contentPadding;
 
   const CustomTextField({
     super.key,
@@ -52,6 +30,28 @@ class CustomTextField extends StatelessWidget {
     this.textCapitalization = TextCapitalization.none,
     this.contentPadding,
   });
+  final TextEditingController? controller;
+  final String? label;
+  final String? hintText;
+  final String? helperText;
+  final String? errorText;
+  final IconData? prefixIcon;
+  final Widget? suffixIcon;
+  final bool obscureText;
+  final bool enabled;
+  final bool readOnly;
+  final int? maxLines;
+  final int? maxLength;
+  final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
+  final List<TextInputFormatter>? inputFormatters;
+  final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
+  final void Function()? onTap;
+  final void Function(String)? onSubmitted;
+  final FocusNode? focusNode;
+  final TextCapitalization textCapitalization;
+  final EdgeInsetsGeometry? contentPadding;
 
   @override
   Widget build(BuildContext context) {

@@ -2,25 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/utils/app_router.dart';
-import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_constants.dart';
-import '../../../../core/services/firebase_service.dart';
 import '../../../../core/models/service_model.dart';
+import '../../../../core/services/firebase_service.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../../core/utils/app_router.dart';
 import '../../../../shared/widgets/loading_button.dart';
 
 // Provider for service detail
 final serviceDetailProvider = FutureProvider.family<ServiceModel?, String>((ref, serviceId) async {
-  return await FirebaseService.getServiceById(serviceId);
+  return FirebaseService.getServiceById(serviceId);
 });
 
 class ServiceDetailPage extends ConsumerWidget {
-  final String serviceId;
 
   const ServiceDetailPage({
-    super.key,
-    required this.serviceId,
+    required this.serviceId, super.key,
   });
+  final String serviceId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,7 +34,7 @@ class ServiceDetailPage extends ConsumerWidget {
           }
           return _buildServiceDetail(context, service);
         },
-        loading: () => _buildLoadingState(),
+        loading: _buildLoadingState,
         error: (error, stack) => _buildErrorState(context, error.toString()),
       ),
     );
